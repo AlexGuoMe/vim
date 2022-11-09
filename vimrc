@@ -28,7 +28,12 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'fatih/vim-go'
 
 " 导航目录侧边栏
-" Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
+
+" 查看当前代码文件中的变量和函数列表的插件，
+" 可以切换和跳转到代码中对应的变量和函数的位置
+" 大纲式导航, Go 需要 https://github.com/jstemmer/gotags 支持
+Plugin 'majutsushi/tagbar'
 
 " 自动补全各种扩号
 Plugin 'jiangmiao/auto-pairs'
@@ -53,7 +58,7 @@ call vundle#end()
 "==============================================================================
 "
 " 设置字体
-set guifont=Menlo\ Regular:h16
+set guifont=Menlo\ Regular:h15
 
 " 设置行号
 set nu
@@ -121,4 +126,10 @@ if has('gui_running')
     set guioptions-=r " 隐藏右侧滚动条
     set guioptions-=b " 隐藏底部滚动条
 endif
+
+"==============================================================================
+" 快捷键设置
+"==============================================================================
+"
+nmap <F8> :TagbarToggle<CR>
 
